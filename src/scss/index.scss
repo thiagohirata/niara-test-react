@@ -1,0 +1,29 @@
+$theme-colors: (
+    'white': #fff,
+);
+
+
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+@import './_btn-xs';
+@import './_btn-circle';
+@import './_calendar';
+
+$popper-transition: opacity 315ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 210ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+.input-dropdown {
+    z-index: $zindex-popover;
+    .input-dropdown-contents {
+        @include transition($popper-transition);
+        @extend .border, .p-2, .shadow-sm, .rounded;
+        background-color: $white;
+    }
+    &:not(.show) {
+        pointer-events: none;
+        .input-dropdown-contents {
+            opacity: 0;
+            transform: matrix(0.5, 0, 0, 0.5, 0, -50);
+            visibility: hidden;
+        }
+    }
+}

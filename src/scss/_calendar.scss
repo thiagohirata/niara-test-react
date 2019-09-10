@@ -1,0 +1,54 @@
+$calendar-cell-width: 2em !default;
+$calendar-grid-width: $calendar-cell-width * 7 !default;
+.devcase-calendar {
+    .devcase-calendar-header {
+        display: flex;
+        align-items: center;
+        button {
+            @extend .btn, .btn-circle, .btn-white, .btn-sm;
+            margin-left: .2rem;
+        }
+
+        .devcase-calendar-month {
+            font-weight: 600;
+            flex-grow: 1;
+        }
+        .devcase-calendar-buttons {
+            margin-left: auto;
+            display: flex;
+        }
+    }
+    .devcase-calendar-grid {
+        display: flex;
+        flex-wrap: wrap;
+        width: $calendar-grid-width;
+
+        .devcase-calendar-cell {
+            width: $calendar-cell-width;
+            height: $calendar-cell-width;
+            text-align: center;
+            @for $i from 1 through 6 {
+                &.first-day-#{$i} {
+                    margin-left: $i * $calendar-cell-width;
+                }
+            }
+  
+        }
+        .devcase-calendar-weekday {
+            @extend .text-muted, .py-2;
+            width: $calendar-cell-width;
+            text-align: center;
+            font-weight: 600;
+        }
+    }
+
+    .devcase-calendar-day {
+        @extend .btn, .btn-circle, .btn-xs;
+        &.active {
+            @extend .btn-primary;
+        }
+        &:not(.active) {
+            @extend .btn-white;
+        }
+    }
+}

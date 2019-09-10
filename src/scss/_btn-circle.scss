@@ -1,0 +1,19 @@
+
+.btn-circle {
+    @extend .rounded-pill;
+    padding: $btn-padding-y !important;
+    box-sizing: content-box;
+    width: $btn-line-height*1em !important;
+    height: $btn-line-height*1em !important;
+
+    &.btn-sm {
+        padding: $btn-padding-y-sm !important;
+        width: $btn-line-height-sm*1em !important;
+        height: $btn-line-height-sm*1em !important;
+    }
+    &.btn-xs {
+        padding: $btn-padding-y-xs !important;
+        width: $btn-line-height-xs*1em !important;
+        height: $btn-line-height-xs*1em !important;
+    }
+}

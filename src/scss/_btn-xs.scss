@@ -1,0 +1,14 @@
+
+$border-radius-xs:            .2rem !default;
+$font-size-xs:                $font-size-base * .675 !default;
+$line-height-xs:              1.5 !default;
+
+$btn-padding-y-xs:            .19rem !default;
+$btn-padding-x-xs:            .4rem !default;
+$btn-font-size-xs:            $font-size-xs !default;
+$btn-line-height-xs:          $line-height-xs !default;
+$btn-border-radius-xs:        $border-radius-xs !default;
+
+.btn-xs {
+    @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $btn-font-size-xs, $btn-line-height-xs, $btn-border-radius-xs);
+}
